@@ -4,16 +4,16 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center mt-5">
-                <h1>I nostri Progetti</h1>
+                <h1>Progetti</h1>
             </div>
             <div class="col-12 mt-5">
                 <table class="table table-striped">
                     <thead>
                         <tr class="text-center">
                             <th>ID</th>
-                            <th>Title</th>
-                            <th>Date of Creation</th>
-                            <th>Tools</th>
+                            <th>Titolo</th>
+                            <th>Data</th>
+                            <th>Utensili</th>
                         </tr>
                     </thead>
                     <tbody>
