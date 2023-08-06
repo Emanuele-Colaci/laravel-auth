@@ -15,6 +15,13 @@
     </head>
 
     <body>
+        <div class="my-container d-flex justify-content-between">
+            <div class="my-content text-bg-secondary d-flex justify-content-center flex-column">
+                <a href="{{url('/') }}" class="btn btn-outline-info my-4 mx-4">{{ __('Home') }}</a>
+                <a href="{{ Route('admin.project.index') }}" class="btn btn-outline-info my-4 mx-4">Progetti</a>
+                <a href="{{ Route('admin.dashboard') }}" class="btn btn-outline-info my-4 mx-4">Dashboard</a>
+            </div>
+        </div>
         <main>
             @yield('content')
         </main>

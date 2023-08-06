@@ -21,9 +21,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 text-center my-5">
-            <a href="{{ Route('admin.project.index') }}" class="btn btn-primary">Progetti</a>
-        </div>
     </div>
 </div>
 @endsection

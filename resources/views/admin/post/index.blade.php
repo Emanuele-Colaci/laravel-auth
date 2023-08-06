@@ -42,9 +42,6 @@
                     </tbody>
                 </table>
             </div>
-            <div class="col-12 text-center mt-5">
-                <a href="{{ Route('admin.dashboard') }}" class="btn btn-primary">Dashboard</a>
-            </div>
         </div>
     </div>
 @endsection
