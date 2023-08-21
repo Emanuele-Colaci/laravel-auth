@@ -34,10 +34,10 @@
                                     <a href="{{ route('admin.project.edit', $project->id) }}" class="btn btn-warning mx-1">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form class="d-inline-block mx-1" action="{{ route('admin.project.destroy', $project->id) }}" method="POST" onsubmit="return confirm('Sei sicuro di voler elliminare il fumetto?')">
+                                    <form class="d-inline-block mx-1 delete-post-form" action="{{ route('admin.project.destroy', $project->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger">
+                                        <button data-project-title="{{ $project->titolo }}" type="submit" class="btn btn-danger">
                                             <i class="fas fa-trash"></i>
                                         </button>
                                     </form>
@@ -49,4 +49,5 @@
             </div>
         </div>
     </div>
+    @include('admin.partials.modal_delete')
 @endsection
