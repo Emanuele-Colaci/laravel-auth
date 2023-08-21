@@ -34,7 +34,7 @@
                                     <a href="{{ route('admin.project.edit', $project->id) }}" class="btn btn-warning mx-1">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form class="d-inline-block mx-1" action="" method="POST">
+                                    <form class="d-inline-block mx-1" action="{{ route('admin.project.destroy', $project->id) }}" method="POST" onsubmit="return confirm('Sei sicuro di voler elliminare il fumetto?')">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger">
