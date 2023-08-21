@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
-
+use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
@@ -15,11 +15,19 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $datas = $request->all();
+
+        if(isset($datas['message'])){
+            $message = $datas['message'];
+        }else{
+            $message = '';
+        }
+
         $projects = Project::all();
 
-        return view('admin.post.index', compact('projects'));
+        return view('admin.post.index', compact('projects', 'message'));
     }
 
     /**
@@ -48,7 +56,8 @@ class ProjectController extends Controller
 
         $projects->save();
 
-        return redirect()->route('admin.project.store', $projects->id);
+        $message = 'Creazione progetto completata';
+        return redirect()->route('admin.project.store', ['message' => $message]);
     }
 
     /**
@@ -70,6 +79,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
+     
         return view('admin.post.edit', compact('project'));
     }
 
@@ -86,7 +96,8 @@ class ProjectController extends Controller
 
         $project->update($form_data);
 
-        return redirect()->route('admin.project.show', $project->id);
+        $message = 'Aggiornamento progetto completato';
+        return redirect()->route('admin.project.index', ['message' => $message]);
     }
 
     /**
@@ -98,6 +109,7 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
-        return redirect()->route('admin.project.index');
+        $message = 'Cancellazione proggetto completata';
+        return redirect()->route('admin.project.index', ['message' => $message]);
     }
 }

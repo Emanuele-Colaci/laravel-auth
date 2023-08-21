@@ -12,6 +12,11 @@
                 </div>
             </div>
             <div class="col-12 mt-5">
+                @if($message != '')
+                    <div class="alert alert-success">
+                        {{ $message }}
+                    </div>
+                @endif
                 <table class="table table-striped">
                     <thead>
                         <tr class="text-center">
