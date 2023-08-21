@@ -23,7 +23,7 @@
                                 <td>{{ $project->titolo }}</td>
                                 <td>{{ $project->data }}</td>
                                 <td>
-                                    <a href="" class="btn btn-info mx-1">
+                                    <a href="{{ route('admin.project.show', $project->id) }}" class="btn btn-info mx-1">
                                         <i class="fas fa-eye"></i>
                                     </a>
                                     <a href="" class="btn btn-warning mx-1">
