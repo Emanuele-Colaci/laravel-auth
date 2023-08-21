@@ -3,8 +3,13 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-12 text-center mt-5">
-                <h1>Progetti</h1>
+            <div class="col-12 text-center mt-5 d-flex justify-content-between">
+                <div>
+                    <h1>Progetti</h1>
+                </div>
+                <div>
+                    <a href="{{ route('admin.project.create') }}" class="btn btn-success">Crea proggetto</a>
+                </div>
             </div>
             <div class="col-12 mt-5">
                 <table class="table table-striped">
