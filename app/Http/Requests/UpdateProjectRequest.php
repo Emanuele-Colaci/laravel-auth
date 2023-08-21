@@ -29,4 +29,10 @@ class UpdateProjectRequest extends FormRequest
             'data' => 'required'
         ];
     }
+    public function messages(){
+        return[
+            'required'  => 'Il campo :attribute è obbligatorio.',
+            'max'       => 'Il campo :attribute non può superare :max caratteri.'
+        ];
+    }
 }

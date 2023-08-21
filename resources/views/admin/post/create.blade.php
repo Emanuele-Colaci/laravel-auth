@@ -25,17 +25,26 @@
                             <div class="col-12 my-3">
                                 <!-- Titolo -->
                                 <label class="control-label my-3">Titolo</label>
-                                <input type="text" name="titolo" id="titolo" placeholder="Inserisci il titolo" class="form-control" value="{{ old('titolo') }}" require>
+                                <input type="text" name="titolo" id="titolo" placeholder="Inserisci il titolo" class="form-control @error('titolo') is-invalid @enderror" value="{{ old('titolo') }}">
+                                @error('titolo')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="col-12 my-3">
                                 <!-- Descrizione -->
                                 <label class="control-label my-3">Descrizione</label>
-                                <textarea name="descrizione" id="descrizione" placeholder="Inserisci la descrizione" cols="30" rows="10" class="form-control" require>{{ old('descrizione') }}</textarea>
+                                <textarea name="descrizione" id="descrizione" placeholder="Inserisci la descrizione" cols="30" rows="10" class="form-control @error('descrizione') is-invalid @enderror" >{{ old('descrizione') }}</textarea>
+                                @error('descrizione')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="col-12 my-3">
                                 <!-- Data -->
-                                <label class="control-label my-3">Descrizione</label>
-                                <input type="date" name="data" id="data" placeholder="Inserisci la data" class="form-control" value="{{ old('descrizione') }}" require>
+                                <label class="control-label my-3">Data</label>
+                                <input type="date" name="data" id="data" placeholder="Inserisci la data" class="form-control @error('data') is-invalid @enderror" value="{{ old('data') }}" >
+                                @error('data')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="col-12 text-center my-5">
                                 <!-- Submit Button -->
