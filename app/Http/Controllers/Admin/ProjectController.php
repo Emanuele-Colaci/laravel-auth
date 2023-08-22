@@ -57,7 +57,7 @@ class ProjectController extends Controller
         $projects->save();
 
         $message = 'Creazione progetto completata';
-        return redirect()->route('admin.project.store', ['message' => $message]);
+        return redirect()->route('admin.project.index', ['message' => $message]);
     }
 
     /**
