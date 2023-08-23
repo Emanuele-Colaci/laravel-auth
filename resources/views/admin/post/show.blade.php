@@ -16,6 +16,9 @@
             <div class="col-12">
                 <p>{{ $project->descrizione }}</p>
             </div>
+            <div class="col-12">
+                <img src="{{ asset('storage/'. $project->image) }}" width="600px" height="500px">
+            </div>
         </div>
     </div>
 @endsection

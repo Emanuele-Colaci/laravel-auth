@@ -31,6 +31,14 @@
                                 @enderror
                             </div>
                             <div class="col-12 my-3">
+                                <!-- Immagine -->
+                                <label class="control-label my-3">Immagine</label>
+                                <input type="file" name="image" id="image" placeholder="Inserisci la tua immagine" class="form-control @error('image') is-invalid @enderror" value="{{ old('image') }}">
+                                @error('titolo')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="col-12 my-3">
                                 <!-- Descrizione -->
                                 <label class="control-label my-3">Descrizione</label>
                                 <textarea name="descrizione" id="descrizione" placeholder="Inserisci la descrizione" cols="30" rows="10" class="form-control @error('descrizione') is-invalid @enderror" >{{ old('descrizione') }}</textarea>

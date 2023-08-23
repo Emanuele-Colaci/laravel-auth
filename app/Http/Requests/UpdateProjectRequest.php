@@ -25,6 +25,7 @@ class UpdateProjectRequest extends FormRequest
     {
         return [
             'titolo' => 'required|max:50',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg',
             'descrizione' => 'required',
             'data' => 'required'
         ];
@@ -32,7 +33,9 @@ class UpdateProjectRequest extends FormRequest
     public function messages(){
         return[
             'required'  => 'Il campo :attribute è obbligatorio.',
-            'max'       => 'Il campo :attribute non può superare :max caratteri.'
+            'max'       => 'Il campo :attribute non può superare :max caratteri.',
+            'image.mimes' => 'Il formato dell\'immagine non è valido. Si prega di caricare un\'immagine in formato JPEG, PNG, JPG, GIF o SVG.',
+            'image' => 'Il tipo di file non è consentito. Si prega di caricare un\'immagine in formato JPEG, PNG, JPG, GIF o SVG.',
         ];
     }
 }

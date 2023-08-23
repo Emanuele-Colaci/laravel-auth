@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
@@ -51,6 +52,15 @@ class ProjectController extends Controller
         $form_data = $request->all();
 
         $projects = new Project();
+
+        if($request->hasFile('image')){
+            //EFFETTUO L'UPLOAD E MI RICAVO IL PATH DELL'IMMAGINE
+            //$path = Storage::put('project-image', $form_data['image']);
+            //OPPURE
+            
+            $path = Storage::put('projects-image', $request->image);
+            $form_data['image'] = $path;
+        }
 
         $projects->fill($form_data);
 
