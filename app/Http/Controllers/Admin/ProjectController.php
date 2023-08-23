@@ -51,8 +51,8 @@ class ProjectController extends Controller
     {
         $form_data = $request->all();
 
-        $projects = new Project();
-
+        $project = new Project();
+        
         if($request->hasFile('image')){
             //EFFETTUO L'UPLOAD E MI RICAVO IL PATH DELL'IMMAGINE
             //$path = Storage::put('project-image', $form_data['image']);
@@ -61,10 +61,10 @@ class ProjectController extends Controller
             $path = Storage::put('projects-image', $request->image);
             $form_data['image'] = $path;
         }
-
-        $projects->fill($form_data);
-
-        $projects->save();
+        
+        $project->fill($form_data);
+        
+        $project->save();
 
         $message = 'Creazione progetto completata';
         return redirect()->route('admin.project.index', ['message' => $message]);
@@ -103,6 +103,15 @@ class ProjectController extends Controller
     public function update(UpdateProjectRequest $request, Project $project)
     {
         $form_data = $request->all();
+
+        if($request->hasFile('image')){
+            if($project->image){
+                Storage::delete($project->image);
+            }
+
+            $path = Storage::put('projects-image', $request->image);
+            $form_data['image'] = $path;
+        }
 
         $project->update($form_data);
 

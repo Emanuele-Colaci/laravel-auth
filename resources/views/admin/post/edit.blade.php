@@ -31,11 +31,14 @@
                                     <div class="text-denger">{{ message }}</div>
                                 @enderror
                             </div>
+                            <div>
+                                <img src="{{ asset('storage/'.$project->image) }}" width="600px" height="500px">
+                            </div>
                             <div class="col-12 my-3">
                                 <!-- Immagine -->
                                 <label class="control-label my-3">Immagine</label>
                                 <input type="file" name="image" id="image" placeholder="Inserisci la tua immagine" class="form-control @error('image') is-invalid @enderror" value="{{ old('image') ?? $project->image}}">
-                                @error('titolo')
+                                @error('image')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>

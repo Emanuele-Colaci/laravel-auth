@@ -34,7 +34,7 @@
                                 <!-- Immagine -->
                                 <label class="control-label my-3">Immagine</label>
                                 <input type="file" name="image" id="image" placeholder="Inserisci la tua immagine" class="form-control @error('image') is-invalid @enderror" value="{{ old('image') }}">
-                                @error('titolo')
+                                @error('image')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
