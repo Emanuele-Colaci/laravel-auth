@@ -18,7 +18,7 @@
                 </div>
             @endif
             <div class="col-6">
-            <form action=" {{ Route('admin.project.store') }} " method="POST">
+            <form action=" {{ Route('admin.project.store') }} " method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group border p-4">
                         <div class="row">
