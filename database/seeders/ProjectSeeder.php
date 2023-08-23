@@ -19,6 +19,7 @@ class ProjectSeeder extends Seeder
         for ($i = 1; $i <= 10; $i++){
             $project = new Project();
             $project->titolo = $faker->word();
+            $project->image = $faker->imageUrl(640, 480, 'project', true);
             $project->descrizione = $faker->paragraph();
             $project->data = $faker->dateTimeThisYear();
             $project->save();
