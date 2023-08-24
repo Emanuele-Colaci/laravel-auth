@@ -127,6 +127,10 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        if($project->image){
+            Storage::delete($project->image);
+        }
+        
         $project->delete();
         $message = 'Cancellazione proggetto completata';
         return redirect()->route('admin.project.index', ['message' => $message]);
