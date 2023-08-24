@@ -17,7 +17,7 @@
                 <p>{{ $project->descrizione }}</p>
             </div>
             <div class="col-12">
-                <img src="{{ asset('storage/'. $project->image) }}" width="600px" height="500px">
+                <img src="{{ asset('storage/'. $project->image) }}" height="50%">
             </div>
         </div>
     </div>
